@@ -1,0 +1,76 @@
+@use "../../util/" as *;
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  gap: rem(23);
+
+  .card__count {
+    margin-bottom: 0;
+  }
+
+  .card__number,
+  .card__change {
+    align-self: end;
+  }
+
+  img,
+  .card__change {
+    justify-self: end;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  color: var(--text-color2);
+  text-align: center;
+  padding: rem(25);
+  border-radius: rem(5);
+  transition: background 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--card-hover);
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+  }
+
+  &__count {
+    color: var(--card-count);
+    font-weight: 700;
+    letter-spacing: rem(-2);
+    line-height: 1;
+    margin-bottom: rem(4);
+
+    &--small {
+      font-size: rem(32);
+    }
+  }
+
+  &__change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(12);
+    font-weight: 700;
+
+    &--up {
+      color: var(--limegreen);
+    }
+
+    &--down {
+      color: var(--brightred);
+    }
+
+    img {
+      margin-right: rem(4);
+    }
+  }
+}
